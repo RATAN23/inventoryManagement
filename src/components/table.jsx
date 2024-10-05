@@ -8,6 +8,8 @@ import { deleteItem } from '../reducers/data';
 
 export const tableHeaders = ['Name', 'Category', 'Price', 'Quantity', 'Value', 'ACTION'];
 
+
+
 const TableData = () => {
     const isAdmin = useSelector(state => state.admin.value);
     const data = useSelector(state => state.cart.products);
@@ -43,9 +45,9 @@ const TableData = () => {
     }
     
     return (
-        <div className='mt-3 mr-3'>
+        <div className='h-[500px] mt-3 mr-3 overflow-clip overflow-y-scroll'>
             <table className='table-auto border-black border-collapse'>
-                <thead className='bg-gray-300'>
+                <thead className='sticky top-0 bg-gray-300'>
                     <tr>
                         {
                             tableHeaders.map((x, index) => (
@@ -54,7 +56,7 @@ const TableData = () => {
                         }
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className=''>
                     {
                         data.map((x, index) => (
                             <tr key={index} className='border-white/20 border-b-2  bg-slate-800 text-white'>
@@ -88,7 +90,7 @@ const TableData = () => {
                             </tr>
                         ))
                     }
-                </tbody>
+                </tbody> 
             </table>
             {isModelOpen && (
                 <MyModal
