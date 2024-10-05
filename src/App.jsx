@@ -67,7 +67,6 @@ function App() {
             <Mycard icon = {<CategoryIcon/>} title = "No of Category" value = {categoryCount}/>
           </div>
           <TableData/>
-          {/* <MyModal/> */}
         </div>
       </div>
     </>
