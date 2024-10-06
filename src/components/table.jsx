@@ -45,13 +45,13 @@ const TableData = () => {
     }
     
     return (
-        <div className='h-[500px] mt-3 mr-3 overflow-clip overflow-y-scroll'>
+        <div className='h-[500px] mt-3 mr-3 overflow-clip overflow-x-scroll overflow-y-scroll'>
             <table className='table-auto border-black border-collapse'>
                 <thead className='sticky top-0 bg-gray-300'>
                     <tr>
                         {
                             tableHeaders.map((x, index) => (
-                                <th className="border-black border-b-2 px-20 py-5 text-left bg-[#090d07] text-[#43812e]" key={index}>{x}</th>
+                                <th className="border-black border-b-2 px-20 py-5 text-left bg-[#090d07] text-[#43812e]" key={x.name}>{x}</th>
                             ))
                         }
                     </tr>
@@ -59,7 +59,7 @@ const TableData = () => {
                 <tbody className=''>
                     {
                         data.map((x, index) => (
-                            <tr key={index} className='border-white/20 border-b-2  bg-slate-800 text-white'>
+                            <tr key={x.name} className='border-white/20 border-b-2  bg-slate-800 text-white'>
                                 <td className='px-20 py-5 text-left'>{x.name}</td>
                                 <td className='px-20 py-2 text-left'>{x.category}</td>
                                 <td className='px-20 py-2 text-left'>{x.price}</td>
