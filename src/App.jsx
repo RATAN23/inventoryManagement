@@ -10,6 +10,7 @@ import { fetchData } from "./reducers/data";
 import { useDispatch, useSelector } from "react-redux";
 import TableData from "./components/table";
 import MyModal from "./components/modal";
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const products = useSelector(state => state.cart.products);
@@ -57,6 +58,7 @@ function App() {
   return (
     <>
       <div className="h-screen bg-black flex flex-col text-white">
+      <Analytics/>
         <Navbar />
         <div className="ml-5 flex flex-col gap-2">
           <h1 className="text-6xl">Inventory Stats</h1>
